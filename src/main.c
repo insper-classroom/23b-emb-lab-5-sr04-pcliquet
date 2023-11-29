@@ -174,7 +174,7 @@ static void task_oled(void *pvParameters) {
 			char str[20];
 			sprintf(str, "d: %f m", d);
 			gfx_mono_draw_string(str, 10, 8, &sysfont);
-			xSemaphoreGiveFromISR(xSemaphoreTempo,xHigherPriorityTaskWoken);
+			//xSemaphoreGiveFromISR(xSemaphoreTempo,xHigherPriorityTaskWoken);
 		}
 
 	}
@@ -185,7 +185,7 @@ static void task_tempo(void *pvParameters){
 	
 	while(1){
 		if (xSemaphoreTake(xSemaphoreTempo, 1000)){
-			send_trigger();
+			//send_trigger();
 			
 		}
 		
